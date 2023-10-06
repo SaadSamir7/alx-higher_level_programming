@@ -28,4 +28,3 @@ if __name__ == "__main__":
 
     print(f"{a} {operator} {b} = {res}")
     sys.exit(0)
-
