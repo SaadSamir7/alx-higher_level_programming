@@ -1,30 +1,24 @@
 #!/usr/bin/python3
-import sys
+from sys import argv
 from calculator_1 import add, sub, mul, div
+if __name__ != "__main__":
+    exit()
 
-if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        sys.exit(1)
+argc = len(argv) - 1
+if argc != 3:
+    print("Usage: {:s} <a> <operator> <b>".format(argv[0]))
+    exit(1)
+elif argv[2] == '+':
+    op = add
+elif argv[2] == '-':
+    op = sub
+elif argv[2] == '*':
+    op = mul
+elif argv[2] == '/':
+    op = div
+else:
+    print("Unknown operator. Available operators: +, -, *, and /")
+    exit(1)
 
-    a = int(sys.argv[1])
-    operator = sys.argv[2]
-    b = int(sys.argv[3])
-
-    if operator == '+':
-        res = add(a, b)
-    elif operator == '-':
-        res = sub(a, b)
-    elif operator == '*':
-        res = mul(a, b)
-    elif operator == '/':
-        if b == 0:
-            print("Error: Division by zero")
-            sys.exit(1)
-        res = div(a, b)
-    else:
-        print("Unknown operator. Available operators: +, -, * and /")
-        sys.exit(1)
-
-    print(f"{a} {operator} {b} = {res}")
-    sys.exit(0)
+res = op(int(argv[1]), int(argv[3]))
+print("{:d} {:s} {:d} = {:d}".format(int(argv[1]), argv[2], int(argv[3]), res))
