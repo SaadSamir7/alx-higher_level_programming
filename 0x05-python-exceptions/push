@@ -3,4 +3,5 @@
 git add .
 git commit -m '0x05. Python - Exceptions'
 git push
+chmod +x *.py
 
