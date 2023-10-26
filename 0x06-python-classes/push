@@ -4,4 +4,4 @@ git add .
 git commit -m 'Python - Classes and Objects'
 git push
 
-chmod -x *.py
+chmod +x *.py
