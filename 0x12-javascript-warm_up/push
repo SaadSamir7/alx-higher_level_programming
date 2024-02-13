@@ -3,3 +3,5 @@
 git add .
 git commit -m 'JavaScript - Warm up'
 git push
+
+chmod +x *js
